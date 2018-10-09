@@ -106,7 +106,9 @@ if __name__ == "__main__":
 	else:
 		filename = sys.argv[1:]
 		if model[0] == "-":
-			model = ""
-			print ("We don’t handle that situation yet!")
+			if len(model) < 2:
+				print ("No such file or directory")
+			else:
+				print ("We don’t handle that situation yet!")
 		else:
 			wc (filename, model)
